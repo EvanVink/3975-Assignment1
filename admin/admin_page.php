@@ -1,6 +1,5 @@
 <?php 
 include("../templates/header.php"); 
-include("../DB/inc_db.php");
 ?>
 <body>
     <div class = "logo">
@@ -12,35 +11,12 @@ include("../DB/inc_db.php");
 
 <?php
 
-$SQL_create_table = "CREATE TABLE IF NOT EXISTS Users
-(
-    StudentId VARCHAR(10) NOT NULL,
-    FirstName VARCHAR(80),
-    LastName VARCHAR(80),
-    School VARCHAR(50),
-    PRIMARY KEY (StudentId)
-);";
-$db->exec($SQL_create_table);
 
-$result = $db->query("SELECT COUNT(*) FROM UserList");
-$row = $result->fetchArray(SQLITE3_ASSOC);
-
-if ($row['COUNT(*)'] == 0) {
-    // If the table is empty, insert data
-    $SQL_insert_data = "INSERT INTO UserList (StudentId, FirstName, LastName, School)
-    VALUES
-        ('A00111111', 'Tom', 'Max', 'Science'),
-        ('A00222222', 'Ann', 'Fay', 'Mining'),
-        ('A00333333', 'Joe', 'Sun', 'Nursing'),
-        ('A00444444', 'Sue', 'Fox', 'Computing'),
-        ('A00555555', 'Ben', 'Ray', 'Mining')
-    ";
-
-    $db->exec($SQL_insert_data);
-}
+// $result = $db->query("SELECT COUNT(*) FROM Users");
+// $row = $result->fetchArray(SQLITE3_ASSOC);
 
 
-$res = $db->query('SELECT * FROM UserList');
+// $res = $db->query('SELECT * FROM Users');
 
 echo "<style>
     table {
@@ -56,7 +32,8 @@ echo "<style>
     }
 
     th {
-        background-color: #4CAF50;
+        background-color:rgb(160, 156, 156);
+        border-color: black;
         color: white;
     }
 
@@ -95,29 +72,29 @@ echo "<style>
 
 echo "<div class='table-container'>";
 echo "<table>";
-echo "<tr><th>Student ID</th><th>First Name</th><th>Last Name</th><th>School</th><th>Actions</th></tr>";
+echo "<tr><th>Username</th><th>First Name</th><th>Last Name</th><th>Registration Date</th><th>Role</th><th>Actions</th></tr>";
 
 // Fetch and display the rows
-while ($row = $res->fetchArray()) {
-    echo "<tr>";
-    echo "<td>{$row['StudentId']}</td>";
-    echo "<td>{$row['FirstName']}</td>";
-    echo "<td>{$row['LastName']}</td>";
-    echo "<td>{$row['School']}</td>";
-    echo "<td class='action-buttons'>";
+// while ($row = $res->fetchArray()) {
+//     echo "<tr>";
+//     echo "<td>{$row['StudentId']}</td>";
+//     echo "<td>{$row['FirstName']}</td>";
+//     echo "<td>{$row['LastName']}</td>";
+//     echo "<td>{$row['School']}</td>";
+//     echo "<td class='action-buttons'>";
     
     // Edit button links to edit_student.php with studentId as query parameter
-    echo "<a href='edit_student.php?studentId={$row['StudentId']}'>Edit</a>";
+//     echo "<a href='edit_student.php?studentId={$row['StudentId']}'>Edit</a>";
 
-    // Delete button links to insert_data.php with studentId as query parameter
-    echo "<a href='delete_student.php?studentId={$row['StudentId']}'>Delete</a>";
+//     // Delete button links to insert_data.php with studentId as query parameter
+//     echo "<a href='delete_student.php?studentId={$row['StudentId']}'>Delete</a>";
 
-    echo "<a href='display_student.php?studentId={$row['StudentId']}'>Display</a>";
+//     echo "<a href='display_student.php?studentId={$row['StudentId']}'>Display</a>";
 
 
-    echo "</td>";  // Close the actions column
-    echo "</tr>";
-}
+//     echo "</td>";  // Close the actions column
+//     echo "</tr>";
+// }
 
 // End the table
 echo "</table>";
@@ -126,12 +103,5 @@ echo "</div>";
 
 echo "<br/><br/>";
 ?>
-
-<div style="font-size: x-large;">
-<p><a href="add_student.php" style="padding: 10px 20px; font-size: 16px; color: #333; background-color: #f0f0f0; 
-text-decoration: none; border: 2px solid #4CAF50; border-radius: 4px; transition: background-color 0.2s, color 0.2s;">Add Student</a></p>
-   <br>
-    
-</div>
 
 <?php include("../templates/footer.php"); ?>
