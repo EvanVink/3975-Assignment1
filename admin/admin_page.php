@@ -1,5 +1,6 @@
 <?php 
 include("../templates/header.php"); 
+include("../utils.php");
 ?>
 <body>
     <div class = "logo">
@@ -11,12 +12,16 @@ include("../templates/header.php");
 
 <?php
 
+$db = new SQLite3('../DB/BlogDB.db');
 
-// $result = $db->query("SELECT COUNT(*) FROM Users");
-// $row = $result->fetchArray(SQLITE3_ASSOC);
+$result = $db->query("SELECT COUNT(*) FROM Users");
+$row = $result->fetchArray(SQLITE3_ASSOC);
 
 
-// $res = $db->query('SELECT * FROM Users');
+$res = $db->query('SELECT * FROM Users');
+
+echo realpath('BlogDB.db');
+
 
 echo "<style>
     table {
@@ -55,7 +60,7 @@ echo "<style>
     }
 
     .action-buttons a {
-        padding: 5px 10px;
+        padding: 10px 20px;
         font-size: 14px;
         cursor: pointer;
         text-decoration: none;
@@ -72,29 +77,25 @@ echo "<style>
 
 echo "<div class='table-container'>";
 echo "<table>";
-echo "<tr><th>Username</th><th>First Name</th><th>Last Name</th><th>Registration Date</th><th>Role</th><th>Actions</th></tr>";
+echo "<tr><th>Username</th><th>First Name</th><th>Last Name</th><th>Registration Date</th><th>isApproved</th><th>Role</th><th>Actions</th></tr>";
 
 // Fetch and display the rows
-// while ($row = $res->fetchArray()) {
-//     echo "<tr>";
-//     echo "<td>{$row['StudentId']}</td>";
-//     echo "<td>{$row['FirstName']}</td>";
-//     echo "<td>{$row['LastName']}</td>";
-//     echo "<td>{$row['School']}</td>";
-//     echo "<td class='action-buttons'>";
+while ($row = $res->fetchArray()) {
+    echo "<tr>";
+    echo "<td>{$row['Username']}</td>";
+    echo "<td>{$row['FirstName']}</td>";
+    echo "<td>{$row['LastName']}</td>";
+    echo "<td>{$row['RegistrationDate']}</td>";
+    echo "<td>{$row['isApproved']}</td>";
+    echo "<td>{$row['Role']}</td>";
+    echo "<td class='action-buttons'>";
     
-    // Edit button links to edit_student.php with studentId as query parameter
-//     echo "<a href='edit_student.php?studentId={$row['StudentId']}'>Edit</a>";
+    echo "<a href='promote_user.php?Username={$row['Username']}'>Approve</a>";
+    echo "<a href='demote_user.php?Username={$row['Username']}' style='color: white; background-color: red; padding: 10px 20px; text-decoration: none; border-radius: 5px;'>Disapprove</a>";
 
-//     // Delete button links to insert_data.php with studentId as query parameter
-//     echo "<a href='delete_student.php?studentId={$row['StudentId']}'>Delete</a>";
-
-//     echo "<a href='display_student.php?studentId={$row['StudentId']}'>Display</a>";
-
-
-//     echo "</td>";  // Close the actions column
-//     echo "</tr>";
-// }
+    echo "</td>";  // Close the actions column
+    echo "</tr>";
+}
 
 // End the table
 echo "</table>";
