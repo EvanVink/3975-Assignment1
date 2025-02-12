@@ -1,21 +1,7 @@
-* {
-    box-sizing: border-box;
-    max-width: 100%;
-}
-
 html, body {
     overflow-x: hidden;
-    width: 100%;
-    position: relative;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    width: 100vw;
-}
 
 header {
     background: white;
@@ -81,4 +67,34 @@ footer {
     width: 100%;
     bottom: 0;
     position: fixed;
+}
+
+
+/* For 401.php */
+.error401_h1 {
+    font-size: 250px;
+    color: #cccccc;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.error401_h2 {
+    font-size: 100px;
+    margin-bottom: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+.error401_p {
+    font-size: 50px;
+    margin-top: 5px;
+    text-align: center;
+    justify-content: center;
+}
+
+.logo{
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
 }
