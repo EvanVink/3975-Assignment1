@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<?php
+    include('templates/header.php');
 
+    echo '<h1 class="error401_h1">401</h1>';
+    echo '<h2 class="error401_h2">Unauthorized Access!</h2>';
+    echo '<p class="error401_p">You must be logged in to access the page</p>';
+    echo '<a href="landing.php">Login</a>';
 
-    <?php
-
-    ?>
-    
-</body>
-</html>
+    include('templates/footer.php');
+?>

@@ -82,3 +82,27 @@ footer {
     bottom: 0;
     position: fixed;
 }
+
+
+/* For 401.php */
+.error401_h1 {
+    font-size: 250px;
+    color: #cccccc;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.error401_h2 {
+    font-size: 100px;
+    margin-bottom: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+.error401_p {
+    font-size: 50px;
+    margin-top: 5px;
+    text-align: center;
+    justify-content: center;
+}
