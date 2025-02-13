@@ -36,6 +36,18 @@
         ('a@a.a', '$password', 'a', 'a', '2025-12-2', 'TRUE', 'admin'),
         ('c@c.c', '$password', 'c', 'c', '2025-12-2', 'FALSE', 'contributor')
     ";
+    
+
+    // $db->exec($insert_data);
+
+    $insert_data = "INSERT INTO Article (ArticleId, Title, Body, CreateDate, StartDate, EndDate, ContributorUsername)
+    VALUES
+    (1, 'Introduction to PHP', 'This article covers the basics of PHP programming including syntax, variables, and loops.', '2025-02-12', '2025-02-12', '2025-02-13', 'johndoe'),
+    (2, 'Exploring SQLite Databases', 'In this article, we delve into SQLite databases and how to interact with them using PHP.', '2025-02-12', '2025-02-12', '2025-02-14', 'janedoe'),
+    (3, 'CSS for Beginners', 'A guide to getting started with CSS, including styling text, backgrounds, and layout.', '2025-02-13', '2025-02-13', '2025-02-15', 'alexsmith'),
+    (4, 'Advanced JavaScript Techniques', 'This article explores advanced JavaScript features such as closures, promises, and async/await.', '2025-02-14', '2025-02-14', '2025-02-16', 'maryjohnson'),
+    (5, 'Building Responsive Websites', 'Learn how to create websites that adapt to different screen sizes using media queries and flexible grids.', '2025-02-15', '2025-02-15', '2025-02-17', 'davidwilson');";
+
 
     $db->exec($insert_data);
 

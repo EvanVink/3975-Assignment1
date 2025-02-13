@@ -69,6 +69,12 @@ footer {
     position: fixed;
 }
 
+.logo{
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
 
 /* For 401.php */
 .error401_h1 {
@@ -91,10 +97,4 @@ footer {
     margin-top: 5px;
     text-align: center;
     justify-content: center;
-}
-
-.logo{
-    width: 500px;
-    margin: 0 auto;
-    text-align: center;
 }

@@ -22,7 +22,9 @@
             <li><a href="../index.php">Articles</a></li>
             <li><a href="../index.php">Profile</a></li>
             <li><a href="../index.php">Log Out</a></li>
-            <li><a href="admin/admin_page.php">Admin page (for testing)</a></li>
+            <li><a href="/admin/admin_page.php">Admin page (for testing)</a></li>
+            <li><a href="/admin/articles.php">Admin Articles (for testing)</a></li>
+
         </ul>
    
     </nav>
