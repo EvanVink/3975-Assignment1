@@ -79,7 +79,6 @@ echo "<div class='table-container'>";
 echo "<table>";
 echo "<tr><th>Username</th><th>First Name</th><th>Last Name</th><th>Registration Date</th><th>isApproved</th><th>Role</th><th>Actions</th></tr>";
 
-// Fetch and display the rows
 while ($row = $res->fetchArray()) {
     echo "<tr>";
     echo "<td>{$row['Username']}</td>";
@@ -90,14 +89,14 @@ while ($row = $res->fetchArray()) {
     echo "<td>{$row['Role']}</td>";
     echo "<td class='action-buttons'>";
     
-    echo "<a href='promote_user.php?Username={$row['Username']}'>Approve</a>";
-    echo "<a href='demote_user.php?Username={$row['Username']}' style='color: white; background-color: red; padding: 10px 20px; text-decoration: none; border-radius: 5px;'>Disapprove</a>";
+    echo "<a href='#' onclick='promoteUser(\"{$row['Username']}\")'>Approve</a>";
+    
+    echo "<a href='#' onclick='demoteUser(\"{$row['Username']}\")' style='color: white; background-color: red; padding: 10px 20px; text-decoration: none; border-radius: 5px;'>Disapprove</a>";
 
-    echo "</td>";  // Close the actions column
+    echo "</td>";  
     echo "</tr>";
 }
 
-// End the table
 echo "</table>";
 echo "</div>";
 
@@ -105,4 +104,27 @@ echo "</div>";
 echo "<br/><br/>";
 ?>
 
+<script>
+function promoteUser(username) {
+    fetch('promote_user.php?Username=' + encodeURIComponent(username), {
+        method: 'GET'
+    })
+    .then(() => {
+        location.reload();
+    })
+    .catch(error => console.error('Error:', error));
+}
+</script>
+
+<script>
+function demoteUser(username) {
+    fetch('demote_user.php?Username=' + encodeURIComponent(username), {
+        method: 'GET'
+    })
+    .then(() => {
+        location.reload();
+    })
+    .catch(error => console.error('Error:', error));
+}
+</script>
 <?php include("../templates/footer.php"); ?>
