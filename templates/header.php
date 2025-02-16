@@ -1,3 +1,9 @@
+<?php
+    //!Created disable nav bar for landing page.
+    $displayNav = isset($displayNav) ? $displayNav : true;
+?>
+
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,23 +18,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     
     <title>The Blog</title>
-</head>
+</head>    
+//!Created disable nav bar for landing page.
+<?php if ($displayNav): ?>
 <header>
     <div class="logo">
-    <h1>THE BLOG</h1>
+        <h1>THE BLOG</h1>
     </div>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="../index.php">Articles</a></li>
-            <li><a href="../index.php">Profile</a></li>
-            <li><a href="../index.php">Log Out</a></li>
-            <li><a href="/admin/admin_page.php">Admin page (for testing)</a></li>
-            <li><a href="/admin/articles.php">Admin Articles (for testing)</a></li>
-            <li><a href="/DB/seed.php">Seed data (for testing)</a></li>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.php">Articles</a></li>
+                <li><a href="../index.php">Profile</a></li>
+                <li><a href="../index.php">Log Out</a></li>
+                <li><a href="/admin/admin_page.php">Admin page (for testing)</a></li>
+                <li><a href="/admin/articles.php">Admin Articles (for testing)</a></li>
+                <li><a href="/DB/seed.php">Seed data (for testing)</a></li>
 
 
-        </ul>
-   
-    </nav>
-
+            </ul>
+        </nav>
+<?php endif; ?>
 </header>

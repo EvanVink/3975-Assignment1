@@ -1,5 +1,9 @@
 html, body {
     overflow-x: hidden;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -66,8 +70,7 @@ footer {
     color: white;
     padding: 10px;
     width: 100%;
-    bottom: 0;
-    position: relative;
+    margin-top: auto; /*footer to the bottom of the page*/
 }
 
 .logo{
@@ -78,24 +81,52 @@ footer {
 
 
 /* For 401.php */
+.error-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
 .error401_h1 {
-    font-size: 250px;
+    font-size: clamp(100px, 20vw, 250px);  /* Responsive from 100px to 250px */
     color: #cccccc;
     text-align: center;
-    justify-content: center;
-    
+    margin-bottom: clamp(10px, 2vw, 30px);
 }
 
 .error401_h2 {
-    font-size: 100px;
-    margin-bottom: 10px;
+    font-size: clamp(40px, 8vw, 100px);
+    margin-bottom: clamp(5px, 1vw, 10px);
     text-align: center;
-    justify-content: center;
 }
 
 .error401_p {
-    font-size: 50px;
-    margin-top: 5px;
+    font-size: clamp(24px, 4vw, 50px);
+    margin-top: clamp(5px, 1vw, 10px);
+    text-align: center;
+}
+
+.error401_btn_container {
+    text-align: center;
+    margin-top: clamp(30px, 5vw, 100px);
+    margin-bottom: clamp(30px, 5vw, 100px);
+}
+
+.error401_btn {
+    font-weight: bold !important;
+    padding: clamp(10px, 2vw, 15px) clamp(20px, 3vw, 30px) !important;
+    font-size: clamp(1.2rem, 2vw, 2rem) !important;
+    transition: all 0.3s ease !important;
+}
+
+
+/* For landing.php */
+.landing_h1 {
+    font-size: 200px;
     text-align: center;
     justify-content: center;
+    margin-top: 200px;
 }
