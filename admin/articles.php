@@ -1,5 +1,7 @@
 <?php
     include '../templates/header.php';
+    include("../utils.php");
+
 ?>
 <style>
          .container {
@@ -32,7 +34,8 @@
 
 
 <?php
-$db = new SQLite3('../DB/BlogDB.db');
+
+$db = getDatabase();
 
 $query = "SELECT ArticleId, Title, substr(Body, 1, 100) as Excerpt, CreateDate, ContributorUsername FROM Article";
 $res = $db->query($query);
