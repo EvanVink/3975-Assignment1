@@ -1,6 +1,8 @@
 <?php
+    include("../utils.php");
 
-    $db = new SQLite3('BlogDB.db');
+    //! If database table is not displaying, change this function to original of your code
+    $db = getDatabase();
 
     $password = 'P@$$w0rd';
 

@@ -12,7 +12,9 @@ include("../utils.php");
 
 <?php
 
-$db = new SQLite3('../DB/BlogDB.db');
+//! If database table is not displaying, change this function to original of your code
+$db = getDatabase();
+// $db = new SQLite3('../DB/BlogDB.db');
 
 $result = $db->query("SELECT COUNT(*) FROM Users");
 $row = $result->fetchArray(SQLITE3_ASSOC);
