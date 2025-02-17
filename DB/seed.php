@@ -5,6 +5,7 @@
     $db = getDatabase();
 
     $password = 'P@$$w0rd';
+    $encryptPassword = password_hash($password, PASSWORD_DEFAULT);
 
     $SQL_create_table_user = "CREATE TABLE IF NOT EXISTS Users
     (
@@ -13,7 +14,7 @@
         FirstName VARCHAR(30) NOT NULL,
         LastName VARCHAR(30) NOT NULL,
         RegistrationDate DATE NOT NULL,
-        isApproved BOOLEAN NOT NULL,
+        IsApproved BOOLEAN NOT NULL DEFAULT FALSE,
         Role TEXT NOT NULL,
         PRIMARY KEY (Username)
     )";
@@ -33,13 +34,12 @@
     $db->exec($SQL_create_table_user);
     $db->exec($SQL_create_table_article);
 
-    $insert_data = "INSERT INTO Users (Username, Password, FirstName, LastName, RegistrationDate, isApproved, Role)
+    $insert_data = "INSERT INTO Users (Username, Password, FirstName, LastName, RegistrationDate, IsApproved, Role)
         VALUES
-        ('a@a.a', '$password', 'a', 'a', '2025-12-2', 'TRUE', 'admin'),
-        ('c@c.c', '$password', 'c', 'c', '2025-12-2', 'FALSE', 'contributor')
+        ('a@a.a', '$encryptPassword', 'a', 'a', '2025-12-2', 1, 'admin'),
+        ('c@c.c', '$encryptPassword', 'c', 'c', '2025-12-2', 1, 'contributor')
     ";
     
-
     // $db->exec($insert_data);
 
     $insert_data = "INSERT INTO Article (ArticleId, Title, Body, CreateDate, StartDate, EndDate, ContributorUsername)

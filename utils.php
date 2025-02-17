@@ -24,5 +24,12 @@
 
         return $db;
     }
-    
+
+    //Function to close the database connection.
+    function closeDBConnection($db) {
+
+        if (isset($db)) {
+            $db->close();
+        }
+    }
 ?>

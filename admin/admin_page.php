@@ -79,7 +79,7 @@ echo "<style>
 
 echo "<div class='table-container'>";
 echo "<table>";
-echo "<tr><th>Username</th><th>First Name</th><th>Last Name</th><th>Registration Date</th><th>isApproved</th><th>Role</th><th>Actions</th></tr>";
+echo "<tr><th>Username</th><th>First Name</th><th>Last Name</th><th>Registration Date</th><th>IsApproved</th><th>Role</th><th>Actions</th></tr>";
 
 while ($row = $res->fetchArray()) {
     echo "<tr>";
@@ -87,7 +87,7 @@ while ($row = $res->fetchArray()) {
     echo "<td>{$row['FirstName']}</td>";
     echo "<td>{$row['LastName']}</td>";
     echo "<td>{$row['RegistrationDate']}</td>";
-    echo "<td>{$row['isApproved']}</td>";
+    echo "<td>{$row['IsApproved']}</td>";
     echo "<td>{$row['Role']}</td>";
     echo "<td class='action-buttons'>";
     

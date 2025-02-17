@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <!-- White background -->
+  <rect width="800" height="800" fill="white"/>
+  
+  <!-- Document outline -->
+  <path d="M200 100 
+           h400 
+           q50 0 50 50
+           v500
+           q0 50 -50 50
+           h-400
+           q-50 0 -50 -50
+           v-500
+           q0 -50 50 -50z" 
+        fill="black"/>
+        
+  <!-- Document inner area -->
+  <path d="M220 120
+           h360
+           q30 0 30 30
+           v460
+           q0 30 -30 30
+           h-360
+           q-30 0 -30 -30
+           v-460
+           q0 -30 30 -30z"
+        fill="white"/>
+        
+  <!-- Text lines -->
+  <rect x="250" y="180" width="200" height="40" rx="20" fill="black"/>
+  <rect x="250" y="280" width="300" height="40" rx="20" fill="black"/>
+  <rect x="250" y="380" width="250" height="40" rx="20" fill="black"/>
+  
+  <!-- Checkmark -->
+  <path d="M250 500
+           l100 100
+           l200 -200"
+        stroke="black"
+        stroke-width="40"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg>
