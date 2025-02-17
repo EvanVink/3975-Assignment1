@@ -19,7 +19,6 @@
     
     <title>The Blog</title>
 </head>    
-//!Created disable nav bar for landing page.
 <?php if ($displayNav): ?>
 <header>
     <div class="logo">

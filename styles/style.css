@@ -91,7 +91,7 @@ footer {
 }
 
 .error401_h1 {
-    font-size: clamp(100px, 20vw, 250px);  /* Responsive from 100px to 250px */
+    font-size: clamp(100px, 20vw, 250px);
     color: #cccccc;
     text-align: center;
     margin-bottom: clamp(10px, 2vw, 30px);
@@ -129,4 +129,93 @@ footer {
     text-align: center;
     justify-content: center;
     margin-top: 200px;
+}
+
+.landing_btn_container {
+    text-align: center;
+    margin-top: clamp(130px, 20vh, 400px);
+    margin-bottom: clamp(30px, 5vw, 100px);
+}
+
+.landing_login_btn {
+    font-weight: bold !important;
+    padding: clamp(10px, 2vw, 15px) clamp(20px, 3vw, 30px) !important;
+    font-size: clamp(1.2rem, 2vw, 2rem) !important;
+    transition: all 0.3s ease !important;
+    margin-right: clamp(30px, 6vw, 60px) !important;
+}
+
+.landing_signup_btn {
+    font-weight: bold !important;
+    padding: clamp(10px, 2vw, 15px) clamp(20px, 3vw, 30px) !important;
+    font-size: clamp(1.2rem, 2vw, 2rem) !important;
+    transition: all 0.3s ease !important;
+}
+
+
+/* For login.php and signup.php */
+.logo_container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.landing_logo_img {
+    width: clamp(100px, 15vw, 150px); /* Responsive logo size */
+    height: auto;
+}
+
+
+/* For login.php*/
+.login_h1 {
+    font-size: 40px;
+    text-align: center;
+    justify-content: center;
+    margin-top: clamp(150px, 45vh, 300px);
+}
+
+.login-form-container {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.login_btn_container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.txt_space {
+    padding-left: 4%;
+    padding-right: 4%;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.login_login_btn, .login_signup_btn {
+    font-weight: bold !important;
+    padding: clamp(8px, 1.5vw, 12px) clamp(15px, 2vw, 25px) !important;
+    font-size: clamp(1rem, 1.5vw, 1.5rem) !important;
+    transition: all 0.3s ease !important;}
+
+/* For signup.php*/
+.signup-form-container {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    font-size: 20px;
+}
+
+.signup_btn_container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.signup_create_btn {
+    font-weight: bold !important;
+    padding: clamp(8px, 1.5vw, 12px) clamp(15px, 2vw, 25px) !important;
+    font-size: clamp(1rem, 1.5vw, 1.5rem) !important;
+    transition: all 0.3s ease !important;
 }
