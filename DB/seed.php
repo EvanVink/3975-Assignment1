@@ -21,7 +21,7 @@
 
     $SQL_create_table_article = "CREATE TABLE IF NOT EXISTS Article
     (
-        ArticleId Integer PRIMARY KEY,
+        ArticleId Integer PRIMARY KEY AUTOINCREMENT,
         Title VARCHAR(255) NOT NULL,
         Body Text NOT NULL,
         CreateDate DATE NOT NULL,
@@ -67,11 +67,11 @@
     developers stay up to date with the latest best practices.  
     Whether building a simple blog or a complex web application,  
     PHP remains a versatile and powerful choice for modern web  
-    development.', '2025-02-12', '2025-02-12', '2025-02-13', 'John Doe'),
-    (2, 'Exploring SQLite Databases', 'In this article, we delve into SQLite databases and how to interact with them using PHP', '2025-02-12', '2025-02-12', '2025-02-14', 'Jane Smith'),
-    (3, 'CSS for Beginners', 'A guide to getting started with CSS, including styling text, backgrounds, and layout', '2025-02-13', '2025-02-13', '2025-02-15', 'Alex Johnson'),
-    (4, 'Advanced JavaScript Techniques', 'This article explores advanced JavaScript features such as closures, promises, and async/await', '2025-02-14', '2025-02-14', '2025-02-16', 'Mary Brown'),
-    (5, 'Building Responsive Websites', 'Learn how to create websites that adapt to different screen sizes using media queries and flexible grids', '2025-02-15', '2025-02-15', '2025-02-17', 'David Wilson');";
+    development.', '2025-02-12', '2025-02-12', '2025-02-13', 'meow@meow.com'),
+    (2, 'Exploring SQLite Databases', 'In this article, we delve into SQLite databases and how to interact with them using PHP', '2025-02-12', '2025-02-12', '2025-02-14', 'meow@meow.com'),
+    (3, 'CSS for Beginners', 'A guide to getting started with CSS, including styling text, backgrounds, and layout', '2025-02-13', '2025-02-13', '2025-02-15', 'meow@meow.com'),
+    (4, 'Advanced JavaScript Techniques', 'This article explores advanced JavaScript features such as closures, promises, and async/await', '2025-02-14', '2025-02-14', '2025-02-16', 'meow@meow.com'),
+    (5, 'Building Responsive Websites', 'Learn how to create websites that adapt to different screen sizes using media queries and flexible grids', '2025-02-15', '2025-02-15', '2025-02-17', 'meow@meow.com');";
 
     $delete_data = "DELETE FROM Article";
     $db->exec($delete_data);

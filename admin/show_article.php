@@ -16,7 +16,7 @@ if (isset($_GET['ArticleId'])) {
         echo "<div class='container'>";
         echo "<h2>" . htmlspecialchars($article['Title']) . "</h2>";
         echo "<p>" . htmlspecialchars($article['ContributorUsername']) . ", " . htmlspecialchars($article['CreateDate']) . "</p>";
-        echo "<p>" . nl2br(htmlspecialchars($article['Body'])) . "</p>";
+        echo "<p>" . nl2br($article['Body']) . "</p>"; //! Deleted htmlspecialchars to allow html tags
         echo "</div><hr>";
     } else {
         echo "<p>No article found.</p>";
