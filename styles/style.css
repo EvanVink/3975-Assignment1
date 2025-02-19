@@ -37,53 +37,50 @@ footer {
 
 /* For header.php */
 nav a {
-    margin: 0 15px;
-    width: 15vw;
+    margin: 0 1vw;
+    width: 10vw;
 }
 
 .navbar {
     width: 100%;
-    padding: 25px 80px;
+    padding: 2vh 6vw;
     background-color: #fff;
-    height: 130px;
+    height: 15vh;
     display: flex;
     align-items: flex-start;
-    padding-top: 40px;
+    padding-top: 4vh;
 }
 
 .nav-container {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 100%;
 }
 
 .blog-title {
-    font-size: 55px;
+    font-size: 2.5vw;
     font-weight: bold;
     color: #000;
     text-decoration: none;
-    letter-spacing: 2px;
+    letter-spacing: 0.2vw;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    margin-left: 1150px;
-    margin-right: 50px;
+    margin-left: auto;
     padding: 0;
-    gap: 50px;
+    gap: 3vw;
     height: 100%;
     align-items: center;
-    float: left;
-
 }
 
 .nav-menu li a {
     color: #000;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 1.5vw;
     font-weight: bold;
     transition: color 0.2s ease;
     white-space: nowrap;
@@ -92,6 +89,7 @@ nav a {
 .nav-menu li a:hover {
     color: #666;
 }
+
 
 /* For 401.php */
 .error-container {
@@ -382,7 +380,7 @@ textarea.form-control {
     padding: 15px;
 }
 
-.mb-3 {
+.mb-31 {
     margin-bottom: 30px !important;
     font-weight: bold !important;
 }
@@ -412,48 +410,112 @@ textarea.form-control {
 
 
 /*index.php*/
-#theCards{
-    margin-left:25%;
-    margin-right:25%;
-    margin-top: 1%;
-    margin-bottom: 2%;
-    border-width: 1px;
-    border-spacing: 1px;
-    border:1px solid;
-    border-color:#8b7765;
+.articles-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#mainText{
-    margin-top: 1%;
-    margin-bottom: 2%;
+.articles-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.article-card {
+    width: calc(50% - 2vw);
+    margin-bottom: 2vw;
+    box-sizing: border-box;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+}
+
+.article-card .card-header {
+    flex-shrink: 0;
+    background-color: #f0f0f0;
+    padding: 1vw;
+    border-bottom: 1px solid none;
+    font-size: 1.2vw;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
     text-align: center;
 }
 
-#cardText{
-    color: #3e2723;
+.article-card .card-body {
+    flex-grow: 1;
+    padding: 1vw;
+    font-size: 1vw;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
-
-#cardButton{
-    color:#d2691e;
+.mainText {
+    margin-top: 1%;
+    margin-bottom: 2%;
+    text-align: center;
+    font-size: 2.5vw;
 }
+
+.cardButton {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 0.9vw;
+        margin-top: auto;
+}
+.cardButton:hover {
+    color: #666; /* Almost black on hover */
+}
+
 
 /*article.php*/
-#main{
-    background-color: whitesmoke;
-    margin-left: 20%;
-    margin-right: 20%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    text-align: center;
+.main {
+    width: 60%;
+    margin: 40px auto;
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    border: 1px solid #e0e0e0;
+    padding: 40px;
+    background-size: 100% 1.2em;
+    line-height: 1.2em;
 }
 
-#date{
-    color:grey;
+.index_h1 {
+    color: #222;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+    letter-spacing: -1px;
 }
 
-#mainBody{
-    margin-top: 3%;
+.date {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.mainBody {
+    color: #333;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
+    word-break: break-word;
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    padding-top: 20px;
 }
 
 

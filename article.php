@@ -37,17 +37,17 @@
 
     
 
-    echo '<body id="back">';
+    echo '<body class="back">';
 
 
     echo "
-    <div id='main'>
+    <div class='main'>
     
-        <h1>{$data[0]}</h1>
+        <h1 class='index_h1'>{$data[0]}</h1>
 
-        <h5 id='date'><i>Posted on {$date} by {$data[4]}</i></h5>
+        <h5 class='date'><i>Posted on {$date} by {$data[4]}</i></h5>
 
-        <pre id='mainBody'>{$data[1]}</pre>
+        <div class='mainBody'> {$data[1]}</div>
     
     </div>
     </body>

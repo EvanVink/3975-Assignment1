@@ -14,14 +14,12 @@
 
     $result = $db->query($dbQuery);
 
-    echo '<body id="back">';
+    echo '<body class="back">';
 
 
-    echo '<div>
-    
-    <h1 id="mainText">Articles</h1>
-    
-    ';
+    echo '<div class="articles-container">';
+    echo '<h1 class="mainText">Articles</h1>';
+    echo '<div class="articles-grid">';
 
     while($data = $result->fetchArray()){
         $date = date_create($data[2]);
@@ -29,25 +27,21 @@
         $str = substr($data[1], 0, 100);
 
         echo "
-
-            <div class='card' id='theCards'>
+            <div class='card border-secondary mb-3 article-card'>
                 <h5 class='card-header'>{$data[0]}</h5>
                 <div class='card-body'>
                     <h5 class='card-title'>{$data[4]}  -  {$date}</h5>
-                    <p class='card-text' id='cardText'>{$str}... <a href='/article.php?id={$data[5]}' id='cardButton'>more</a></p>
+                    <p class='card-text cardText'>{$str}... <a href='/article.php?id={$data[5]}' class='cardButton'>Read More</a></p>
                 </div>
             </div>
-           
         ";
-       
     }
 
+    echo '</div>';
+    echo '</div>';
+    echo '</body>';
 
-    echo '
-    </div>
-    </body>';
-
-    $db->close();
+    closeDBConnection($db);
 
     include('templates/footer.php');
 ?>

@@ -68,12 +68,12 @@
             <div class="createArticle-form-container">
                 <form method="POST" action="">
                     <div class="email_date_container">
-                        <div class="mb-3 flex-1">
+                        <div class="mb-31 flex-1">
                             <label for="email" class="form-label">Email address</label>
                             <input type="email" class="form-control" id="email" 
                                 value="' . sanitize_input($_SESSION["userName"]) . '" readonly>
                         </div>
-                        <div class="mb-3 flex-1">
+                        <div class="mb-31 flex-1">
                             <label for="createDate" class="form-label">Create Date</label>
                             <input type="text" class="form-control" id="createDate"
                                 value="' . sanitize_input($queriedData['CreateDate']) . '" readonly>
@@ -81,13 +81,13 @@
                     </div>
 
                     <div class="date-picker-row">
-                        <div class="mb-3 flex-1">
+                        <div class="mb-31 flex-1">
                             <label for="startDate" class="form-label">Start Date</label>
                             <input type="date" class="form-control" id="startDate" name="startDate" 
                                 value="' . sanitize_input($queriedData['StartDate']) . '"
                                 min="' . $currentDate . '" required>
                         </div>
-                        <div class="mb-3 flex-1">
+                        <div class="mb-31 flex-1">
                             <label for="endDate" class="form-label">End Date</label>
                             <input type="date" class="form-control" id="endDate" name="endDate" 
                                 value="' . sanitize_input($queriedData['EndDate']) . '"
@@ -95,13 +95,13 @@
                         </div>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-31">
                         <label for="title" class="form-label">Title</label>
                         <input type="text" class="form-control" id="title" name="title" 
                             value="' . sanitize_input($queriedData['Title']) . '" required>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-31">
                         <label for="body" class="form-label">Description</label>
                         <textarea class="form-control" id="body" name="body" rows="3" required>' . sanitize_input($queriedData['Body']) . '
                         </textarea>

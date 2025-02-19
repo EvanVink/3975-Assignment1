@@ -50,14 +50,15 @@
                             $dateStart = date_format($dateStart, ("F d, Y"));
                             $dateEnd = date_create($data[3]);
                             $dateEnd = date_format($dateEnd, ("F d, Y"));
-                            $str = strip_tags(substr($data[1], 0, 50));
+                            $title = substr($data[0], 0, 15);
+                            $str = strip_tags(substr($data[1], 0, 30));
 
                             echo "
                             <tr>
                                 <td>{$data[5]}</td>
                                 <td>{$dateStart}</td>
                                 <td>{$dateEnd}</td>
-                                <td>{$data[0]}</td>
+                                <td>{$title}</td>
                                 <td>{$str}...</td>
                                 <td>
                                     <button class='btn btn-outline-primary' type='button'>
