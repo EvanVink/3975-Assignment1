@@ -1,8 +1,8 @@
 <?php
     $displayNav = false;    //Disabling the navigation bar.
 
-    include('templates/header.php');
-    include('utils.php');
+    include('../templates/header.php');
+    include('../utils.php');
 
     // Back-end code for the login form.
     $error_messages = [];
@@ -51,11 +51,11 @@
                         //Redirecting to the admin page if the user is an admin.
                         if ($result["Role"] == "admin") {
                             //! I might want to change this path.
-                            header("Location: /admin/admin_page.php");
+                            header("Location: ../admin/admin_page.php");
                             
                         } else {
                             //Redirecting to the main page.
-                            header("Location: index.php");
+                            header("Location: ../index.php");
                         }                        
                         exit();
 
@@ -124,5 +124,5 @@
             </div>';
         echo '</div>';
     echo '</body>';
-    include('templates/footer.php');
+    include('../templates/footer.php');
 ?>

@@ -1,6 +1,6 @@
 <?php
-    include('templates/header.php');    
-    include('utils.php');
+    include('../templates/header.php');    
+    include('../utils.php');
 
     
     if (!isset($_SESSION["userName"])) {
@@ -53,5 +53,5 @@
     </body>
     ";
 
-    include('templates/footer.php');
+    include('../templates/footer.php');
 ?>

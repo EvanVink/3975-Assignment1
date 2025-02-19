@@ -4,7 +4,7 @@
 
     
     if (!isset($_SESSION["userName"])) {
-        header("Location: login.php");
+        header("Location: /User/login.php");
         exit();
     }
 
@@ -31,7 +31,7 @@
                 <h5 class='card-header'>{$data[0]}</h5>
                 <div class='card-body'>
                     <h5 class='card-title'>{$data[4]}  -  {$date}</h5>
-                    <p class='card-text cardText'>{$str}... <a href='/article.php?id={$data[5]}' class='cardButton'>Read More</a></p>
+                    <p class='card-text cardText'>{$str}... <a href='/User/article.php?id={$data[5]}' class='cardButton'>Read More</a></p>
                 </div>
             </div>
         ";

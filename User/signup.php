@@ -1,8 +1,8 @@
 <?php
     $displayNav = false;    //Disabling the navigation bar.
 
-    include('templates/header.php');
-    include('utils.php');
+    include('../templates/header.php');
+    include('../utils.php');
 
     // Back-end code for the sign-up form.
     $error_messages = [];
@@ -141,5 +141,5 @@
 
     echo '</body>';
 
-    include('templates/footer.php');
+    include('../templates/footer.php');
 ?>

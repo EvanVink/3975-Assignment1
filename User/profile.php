@@ -1,6 +1,6 @@
 <?php
-    include('templates/header.php');    
-    include('utils.php');
+    include('../templates/header.php');    
+    include('../utils.php');
 
     
     if (!isset($_SESSION["userName"])) {
@@ -62,17 +62,17 @@
                                 <td>{$str}...</td>
                                 <td>
                                     <button class='btn btn-outline-primary' type='button'>
-                                        <a class='link-button-edit dashboard-link' href='/edit_article.php?id={$data[5]}'>Edit</a>
+                                        <a class='link-button-edit dashboard-link' href='edit_article.php?id={$data[5]}'>Edit</a>
                                     </button>
                                 </td>
                                 <td>
                                     <button class='btn btn-outline-danger' type='button'>
-                                        <a class='link-button-delete dashboard-link' href='/remove_article.php?id={$data[5]}'>Delete</a>
+                                        <a class='link-button-delete dashboard-link' href='remove_article.php?id={$data[5]}'>Delete</a>
                                     </button>
                                 </td>
                                 <td>
                                     <button class='btn btn-outline-warning' type='button'>
-                                        <a class='link-button-view dashboard-link' href='/article.php?id={$data[5]}'>View</a>
+                                        <a class='link-button-view dashboard-link' href='article.php?id={$data[5]}'>View</a>
                                     </button>
                                 </td>
                             </tr>";
@@ -87,5 +87,5 @@
 
     closeDBConnection($db);
 
-    include('templates/footer.php');
+    include('../templates/footer.php');
 ?>

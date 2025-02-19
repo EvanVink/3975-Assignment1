@@ -1,6 +1,6 @@
 <?php
     $displayNav = false;
-    include('templates/header.php');
+    include('../templates/header.php');
 
     echo '<body>';
 
@@ -18,9 +18,9 @@
     
     echo '                
         <div class="pending_btn_container">
-            <a href="landing.php" class="btn btn-secondary pending_main_btn">Main Page</a>
+            <a href="../landing.php" class="btn btn-secondary pending_main_btn">Main Page</a>
         </div>';
 
     echo '</body>';
-    include('templates/footer.php');
+    include('../templates/footer.php');
 ?>
