@@ -46,7 +46,6 @@
                         $_SESSION["role"]       = $result["Role"];
                         $_SESSION["name"]       = $result["FirstName"] . " " . $result["LastName"];
 
-                        echo $_SESSION["role"];
                         
                         //Redirecting to the admin page if the user is an admin.
                         if ($result["Role"] == "admin") {
@@ -63,7 +62,7 @@
 
                     } else {
                         //Redirecting to the pending page.
-                        header("Location: pending.php");
+                        header("Location: ../User/pending.php");
                         exit();
                     }
 
