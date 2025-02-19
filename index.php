@@ -4,7 +4,7 @@
 
     
     if (!isset($_SESSION["userName"])) {
-        header("Location: ../User/login.php");
+        header("Location: https://3975blog-yujin-mitchell-evan.azurewebsites.net/User/login.php");
         exit();
     }
 

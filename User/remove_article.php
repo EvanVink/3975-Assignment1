@@ -1,7 +1,7 @@
 <?php
     
     if (!isset($_SESSION["userName"])) {
-        header("Location: login.php");
+        header("Location: https://3975blog-yujin-mitchell-evan.azurewebsites.net/User/login.php");
         exit();
     }
 
@@ -30,7 +30,7 @@
 
 
     if($exec == true){
-        header("Location: ../User/profile.php");
+        header("Location: https://3975blog-yujin-mitchell-evan.azurewebsites.net/User/profile.php");
         die();
     }
 
