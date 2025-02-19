@@ -90,38 +90,39 @@
             </a>          
         </div>';
 
-    echo '<h1 class="login_h1">Welcome Back!</h1>';
-    
-    // Display error messages if there are any.
-    if (!empty($error_messages)) {
-        echo '<div class="alert alert-danger login-form-container login_error_container">';
-        foreach ($error_messages as $error) {
-            echo '<div>' . $error . '</div>';
+    echo '<div class="login-wrapper">';
+        echo '<h1 class="login_h1">Welcome Back!</h1>';
+        
+        // Display error messages if there are any.
+        if (!empty($error_messages)) {
+            echo '<div class="alert alert-danger login_error_container">';
+            foreach ($error_messages as $error) {
+                echo '<div>' . $error . '</div>';
+            }
+            echo '</div>';
         }
+        
+        // Display the login form.
+        echo '
+            <div class="login-form-container">
+                <form method="POST" action="">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" required
+                                value="' . $formInput["email"] . '">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="login_btn_container">
+                        <button type="submit" class="btn btn-secondary login_login_btn">Submit</button>
+                        <span class="txt_space">or</span>
+                        <a href="signup.php" class="btn btn-secondary login_signup_btn">Sign-up</a>
+                    </div>
+                </form>
+            </div>';
         echo '</div>';
-    }
-    
-    // Display the login form.
-    echo '
-        <div class="login-form-container">
-            <form method="POST" action="">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" required
-                            value="' . $formInput["email"] . '">
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
-                </div>
-                <div class="login_btn_container">
-                    <button type="submit" class="btn btn-secondary login_login_btn">Submit</button>
-                    <span class="txt_space">or</span>
-                    <a href="signup.php" class="btn btn-secondary login_signup_btn">Sign-up</a>
-                </div>
-            </form>
-        </div>';
-
     echo '</body>';
     include('templates/footer.php');
 ?>

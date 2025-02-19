@@ -47,7 +47,7 @@
                 $executeStmt = $insertingStmt->execute();
 
                 if ($executeStmt) {
-                    header("Location: admin/articles.php");
+                    header("Location: index.php");
                     exit();
                 }
             }
