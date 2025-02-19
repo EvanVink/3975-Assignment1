@@ -17,11 +17,13 @@
     $dbQuery = "SELECT Title, Body, StartDate, EndDate, ContributorUsername, ArticleId FROM Article WHERE ContributorUsername = ?";
 
     $perparedstmt = $db->prepare($dbQuery);
-    $perparedstmt->bindParam(1, $_SESSION["name"]);
+    $perparedstmt->bindParam(1, $_SESSION["userName"]);
 
     $result = $perparedstmt->execute();
 
     
+
+
 
     echo '<body id="profileBody">';
 
@@ -33,6 +35,7 @@
     </div>
 
     <div id='mainContain'>
+    
 
     <div>
         <ul id='profileList'>
@@ -41,7 +44,8 @@
             <li>Logout</li>
         </ul>
     </div>
-
+    
+    <button class='btn btn-success' type='button'><a class='link-button' href='/createArticle.php'>Create</a></button>
 
     <div>
 
@@ -53,7 +57,6 @@
                     <th>End Date</th>
                     <th>Title</th>
                     <th>Body</th>
-                    <th>Create</th>
                     <th>Edit</th>
                     <th>Delete</th>
                     <th>View</th>
@@ -83,7 +86,6 @@
         <td>{$dateEnd}</td>
         <td>{$data[0]}</td>
         <td>{$str}...</td>
-        <td><button class='btn btn-success' type='button'><a class='link-button' href='/createArticle.php'>Create</a></button></td>
         <td><button class='btn btn-primary' type='button'><a class='link-button' href='/edit_article.php?id={$data[5]}'>Edit</a></button></td>
         <td><button class='btn btn-danger' type='button'><a class='link-button' href='/remove_article.php?id={$data[5]}'>Delete</a></button></td>
         <td><button class='btn btn-warning' type='button'><a class='link-button' href='/article.php?id={$data[5]}'>View</a></button></td>

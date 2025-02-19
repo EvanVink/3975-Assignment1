@@ -55,7 +55,7 @@
                             
                         } else {
                             //Redirecting to the main page.
-                            header("Location: main.php");
+                            header("Location: index.php");
                         }                        
                         exit();
 
