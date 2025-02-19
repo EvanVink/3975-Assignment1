@@ -1,6 +1,12 @@
 <?php
     $displayNav = false;
     include('templates/header.php');
+
+    if (!isset($_SESSION["userName"])) {
+        header("Location: login.php");
+        exit();
+    }
+
     echo '<body>';
 
     echo '<div class="logo_container">

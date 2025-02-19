@@ -1,6 +1,11 @@
 <?php
+if (!isset($_SESSION["userName"])) {
+    header("Location: login.php");
+    exit();
+}
 
 $db = new SQLite3('../DB/BlogDB.db');
+
 
 
 if (isset($_GET['Username'])) { 
