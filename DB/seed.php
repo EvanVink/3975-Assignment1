@@ -1,5 +1,8 @@
 <?php
     include("../utils.php");
+    session_start();
+
+    
 
     //! If database table is not displaying, change this function to original of your code
     $db = getDatabase();
