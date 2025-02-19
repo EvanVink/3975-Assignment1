@@ -52,6 +52,7 @@
                         if ($result["Role"] == "admin") {
                             //! I might want to change this path.
                             header("Location: /admin/admin_page.php");
+                            
                         } else {
                             //Redirecting to the main page.
                             header("Location: main.php");

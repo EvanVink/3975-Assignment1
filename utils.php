@@ -25,6 +25,7 @@
         return $db;
     }
 
+    
     //Function to close the database connection.
     function closeDBConnection($db) {
 

@@ -9,16 +9,16 @@
             </a>          
         </div>';
 
-        echo '<h1 class="pending_h1">Waiting for approval!</h1>';
-        
-        echo '<div class="pending_container">
-                <img src="../images/approval.svg" alt="Approval" class="approval_img">
-            </div>';
-        
-        echo '                
-            <div class="pending_btn_container">
-                <a href="landing.php" class="btn btn-secondary pending_main_btn">Main Page</a>
-            </div>';
+    echo '<h1 class="pending_h1">Waiting for approval!</h1>';
+    
+    echo '<div class="pending_container">
+            <img src="../images/approval.svg" alt="Approval" class="approval_img">
+        </div>';
+    
+    echo '                
+        <div class="pending_btn_container">
+            <a href="landing.php" class="btn btn-secondary pending_main_btn">Main Page</a>
+        </div>';
 
     echo '</body>';
     include('templates/footer.php');
