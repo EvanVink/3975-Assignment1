@@ -4,7 +4,7 @@
 
     
     if (!isset($_SESSION["userName"])) {
-        header("Location: /User/login.php");
+        header("Location: ../User/login.php");
         exit();
     }
 
