@@ -1,5 +1,4 @@
 <?php
-    include('../templates/header.php');
     include('../utils.php');
 
     //Checking if the user is logged in
@@ -60,6 +59,8 @@
             }
         }
     }
+
+    include('../templates/header.php');
 
     // Start HTML output
     echo '<body>';

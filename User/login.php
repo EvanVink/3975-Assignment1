@@ -50,13 +50,13 @@
                         //Redirecting to the admin page if the user is an admin.
                         if ($result["Role"] == "admin") {
                             //! I might want to change this path.
-                            header("Location: /admin/admin_page.php");
-                            die("die");
+                            header("Location: ../admin/admin_page.php");
+                            die();
                             
                         } else {
                             //Redirecting to the main page.
                             header("Location: ../index.php");
-                            die("died");
+                            die();
                         }                        
                        
 

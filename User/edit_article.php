@@ -1,5 +1,4 @@
 <?php
-    include('../templates/header.php');
     include('../utils.php');
 
     //Checking if the user is logged in
@@ -61,6 +60,8 @@
         }
         echo '</div>';
     }
+
+    include('../templates/header.php');
 
     // Display the form only if the article exists and preloading article data!!
     if ($queriedData) {
