@@ -33,7 +33,7 @@
 
 
     if($exec == true){
-        header("Location: profile.php");
+        header("Location: ../User/profile.php");
     }
 
     $db->close();
