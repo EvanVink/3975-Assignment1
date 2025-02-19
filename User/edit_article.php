@@ -66,7 +66,7 @@
     if ($queriedData) {
         echo '
             <div class="createArticle-form-container">
-                <form method="POST" action="">
+                <form method="POST" action="/User/process_update_article.php">
                     <div class="email_date_container">
                         <div class="mb-31 flex-1">
                             <label for="email" class="form-label">Email address</label>
