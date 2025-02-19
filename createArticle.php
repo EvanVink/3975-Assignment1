@@ -3,7 +3,6 @@
     include('utils.php');
 
     //Checking if the user is logged in
-    session_start();
     if (!isset($_SESSION["userName"])) {
         header("Location: login.php");
         exit();
