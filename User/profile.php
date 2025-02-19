@@ -70,7 +70,7 @@
                                 </td>
                                 <td>
                                     <button class='btn btn-outline-danger' type='button'>
-                                        <a class='link-button-delete dashboard-link' href='remove_article.php?id={$data[5]}'>Delete</a>
+                                        <a class='link-button-delete dashboard-link' href='./remove_article.php?id={$data[5]}'>Delete</a>
                                     </button>
                                 </td>
                                 <td>
