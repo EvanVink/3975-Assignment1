@@ -1,6 +1,6 @@
 <?php
-    include('templates/header.php');
-    include('utils.php');
+    include('../templates/header.php');
+    include('../utils.php');
 
     //Checking if the user is logged in
     if (!isset($_SESSION["userName"])) {
@@ -47,7 +47,7 @@
                 $executeStmt = $insertingStmt->execute();
 
                 if ($executeStmt) {
-                    header("Location: index.php");
+                    header("Location: ../index.php");
                     exit();
                 }
             }
@@ -120,5 +120,5 @@
         </div>';
 
     echo '</body>';
-    include('templates/footer.php');
+    include('../templates/footer.php');
 ?>

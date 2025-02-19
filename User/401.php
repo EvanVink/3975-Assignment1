@@ -1,6 +1,6 @@
 <?php
     $displayNav = false;
-    include('templates/header.php');    
+    include('../templates/header.php');    
     
     echo '<body>';
 
@@ -13,12 +13,12 @@
     echo '<p class="error401_p">You must be logged in to access the page</p>';
 
     echo '<div class="error401_btn_container">
-            <a href="landing.php" class="btn btn-secondary error401_btn">Login/Sign-up</a>
+            <a href="../landing.php" class="btn btn-secondary error401_btn">Login/Sign-up</a>
           </div>';
           
     echo '</div>';
 
     echo '</body>';
     
-    include('templates/footer.php');
+    include('../templates/footer.php');
 ?>

@@ -33,7 +33,7 @@
                     <span class="blog-title">THE BLOG</span>
                 </a>';
             } else {
-                echo '<a class="navbar-brand" href="index.php">
+                echo '<a class="navbar-brand" href="../index.php">
                     <span class="blog-title">THE BLOG</span>
                 </a>';
             }
@@ -45,13 +45,13 @@
             if(isset($_SESSION["role"]) && $_SESSION["role"] == "admin") {
                 echo '<li><a href="../admin/admin_page.php">User List</a></li>';
                 echo '<li><a href="../admin/articles.php">Article</a></li>';
-                echo '<li><a href="../createArticle.php">Create Article</a></li>';
-                echo '<li><a href="../logout.php">Logout</a></li>';
+                echo '<li><a href="../User/createArticle.php">Create Article</a></li>';
+                echo '<li><a href="../User/logout.php">Logout</a></li>';
             } else {
                 echo '<li><a href="../index.php">Article</a></li>';
-                echo '<li><a href="../createArticle.php">Create Article</a></li>';
-                echo '<li><a href="../profile.php">Profile</a></li>';
-                echo '<li><a href="../logout.php">Logout</a></li>';
+                echo '<li><a href="../User/createArticle.php">Create Article</a></li>';
+                echo '<li><a href="../User/profile.php">Profile</a></li>';
+                echo '<li><a href="../User/logout.php">Logout</a></li>';
             }
             ?>
         </ul>

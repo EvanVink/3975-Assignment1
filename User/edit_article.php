@@ -1,10 +1,10 @@
 <?php
-    include('templates/header.php');
-    include('utils.php');
+    include('../templates/header.php');
+    include('../utils.php');
 
     //Checking if the user is logged in
     if (!isset($_SESSION["userName"])) {
-        header("Location: login.php");
+        header("Location: 401.php");
         exit();
     }
 

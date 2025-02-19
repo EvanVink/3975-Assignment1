@@ -1,8 +1,8 @@
 <?php
     
 
-    include('templates/header.php');    
-    include('utils.php');
+    include('../templates/header.php');    
+    include('../utils.php');
 
     
     if (!isset($_SESSION["userName"])) {
@@ -38,5 +38,5 @@
 
     $db->close();
 
-    include('templates/footer.php');
+    include('../templates/footer.php');
 ?>
