@@ -52,12 +52,14 @@
                         if ($result["Role"] == "admin") {
                             //! I might want to change this path.
                             header("Location: ../admin/admin_page.php");
+                            exit();
                             
                         } else {
                             //Redirecting to the main page.
                             header("Location: ../index.php");
+                            exit();
                         }                        
-                        exit();
+                       
 
                     } else {
                         //Redirecting to the pending page.
