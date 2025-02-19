@@ -4,9 +4,13 @@
     include('templates/header.php');    
     include('utils.php');
 
-    // class ArticleData{
+    
+    if (!isset($_SESSION["userName"])) {
+        header("Location: login.php");
+        exit();
+    }
 
-    // }
+
 
     $db = getDatabase();
 
