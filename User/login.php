@@ -1,7 +1,7 @@
 <?php
     $displayNav = false;    //Disabling the navigation bar.
 
-    include('../templates/header.php');
+    
     include('../utils.php');
 
     // Back-end code for the login form.
@@ -80,6 +80,8 @@
 
         }
     }
+
+    include('../templates/header.php');
 
     // Body of the page
     echo '<body>';
