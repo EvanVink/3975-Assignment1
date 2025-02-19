@@ -278,3 +278,85 @@ footer {
     font-size: clamp(1rem, 1.5vw, 1.5rem) !important;
     transition: all 0.3s ease !important;
 }
+
+
+
+
+/*index.php*/
+
+#theCards{
+    margin-left:25%;
+    margin-right:25%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    background-color: #f5f5dc;
+
+    border-width: 1px;
+    border-spacing: 1px;
+    border:1px solid;
+    border-color:#8b7765;
+}
+
+#mainText{
+    margin-top: 1%;
+    margin-bottom: 2%;
+
+    text-align: center;
+}
+
+#cardText{
+    color: #3e2723;
+}
+
+
+#cardButton{
+    color:#d2691e;
+}
+
+#back{
+    background-color: lightgray;
+}
+
+
+/*article.php*/
+#main{
+    background-color: whitesmoke;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+}
+
+#date{
+    color:grey;
+}
+
+#mainBody{
+    margin-top: 3%;
+}
+
+
+/*profile.php*/
+
+#profileList{
+    list-style-type: none;
+}
+
+
+#profileTable {
+    width: 100%; 
+    overflow-x: auto;
+    width: 100%;
+    border-collapse: collapse; 
+    table-layout: fixed; 
+    border: solid black;
+}
+th, td, thead{
+    text-align: center;
+}
+
+#mainContain{
+    display: flex;
+    
+}

@@ -45,6 +45,8 @@
                         $_SESSION["userName"]   = $result['Username'];
                         $_SESSION["role"]       = $result["Role"];
                         $_SESSION["name"]       = $result["FirstName"] . " " . $result["LastName"];
+
+                        echo $_SESSION["role"];
                         
                         //Redirecting to the admin page if the user is an admin.
                         if ($result["Role"] == "admin") {
