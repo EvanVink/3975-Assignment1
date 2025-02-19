@@ -1,5 +1,7 @@
 <?php
 
+    include('../templates/header.php');    
+    include('../utils.php');
 
     session_start();
     
