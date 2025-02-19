@@ -26,12 +26,13 @@
 
     }
 
+    $db->close();
+
 
     if($exec == true){
         header("Location: ../User/profile.php");
+        die();
     }
 
-    $db->close();
-
-    include('../templates/footer.php');
+    
 ?>
