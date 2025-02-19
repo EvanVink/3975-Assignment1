@@ -23,8 +23,6 @@
 
     
 
-    
-
     echo '<body id="profileBody">';
 
 
@@ -55,7 +53,10 @@
                     <th>End Date</th>
                     <th>Title</th>
                     <th>Body</th>
-                    <th>Actions</th>
+                    <th>Create</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <th>View</th>
                 </tr>
             </thead>
 
@@ -82,7 +83,10 @@
         <td>{$dateEnd}</td>
         <td>{$data[0]}</td>
         <td>{$str}...</td>
-        <td><button><a href='/article.php?id={$data[5]}'>View</a></button></td>
+        <td><button class='btn btn-success' type='button'><a class='link-button' href='/createArticle.php'>Create</a></button></td>
+        <td><button class='btn btn-primary' type='button'><a class='link-button' href='/edit_article.php?id={$data[5]}'>Edit</a></button></td>
+        <td><button class='btn btn-danger' type='button'><a class='link-button' href='/remove_article.php?id={$data[5]}'>Delete</a></button></td>
+        <td><button class='btn btn-warning' type='button'><a class='link-button' href='/article.php?id={$data[5]}'>View</a></button></td>
         </tr>
         ";
     }
