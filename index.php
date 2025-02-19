@@ -19,7 +19,7 @@
 
     echo '<div>
     
-    <h1 id="mainText">The Blog Articles:</h1>
+    <h1 id="mainText">Articles</h1>
     
     ';
 
