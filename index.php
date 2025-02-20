@@ -1,6 +1,7 @@
 <?php  
     include('utils.php');
 
+    //starting session
     session_start();
     
     if (!isset($_SESSION["userName"])) {
