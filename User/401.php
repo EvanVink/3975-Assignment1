@@ -1,6 +1,7 @@
 <?php
     $displayNav = false;
     include('../templates/header.php');    
+    //starting and destroying session
     session_start();
     session_destroy();
     

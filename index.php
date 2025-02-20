@@ -1,17 +1,22 @@
 <?php  
+    // Include utility functions
     include('utils.php');
 
     //starting session
     session_start();
     
+    // Check if the user is logged in
     if (!isset($_SESSION["userName"])) {
+        // If not logged in, set navigation display to false
         $displayNav = false;
+        // Include the header template
         include('templates/header.php');
 
         echo '<body>';
 
         echo '<h1 class="landing_h1">THE BLOG</h1>';
 
+        // Display login and sign-up buttons
         echo '<div class="landing_btn_container">
                 <a href="../User/login.php" class="btn btn-secondary landing_login_btn">Login</a>
                 <a href="../User/signup.php" class="btn btn-secondary landing_signup_btn">Sign-up</a>
@@ -21,8 +26,10 @@
 
         include('templates/footer.php');
     } else {
+        // If user is logged in, establish a database connection
         $db = getDatabase();
 
+        // Query to fetch article details along with contributor names
         $dbQuery = "SELECT Title, Body, StartDate, EndDate, FirstName, LastName, ArticleId FROM Article
         INNER JOIN Users ON Article.ContributorUsername = Users.Username";
     
@@ -38,9 +45,12 @@
         echo '<div class="articles-grid">';
     
     
+        // Get the current date
         $currentDate = date("F d, Y");
         
+        // Loop through each article in the database
         while($data = $result->fetchArray()){
+            // Format start and end dates of the article
             $dateStart = date_create($data[2]);
             $dateStart = date_format($dateStart, ("F d, Y"));
             $dateEnd = date_create($data[3]);
