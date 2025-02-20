@@ -13,7 +13,7 @@
     //Function to connect to 'BlogDB.db' database.
     function getDatabase() {
         
-        $dbPath = __DIR__ . '/DB/BlogDB.db';
+        $dbPath = __DIR__ . '../DB/BlogDB.db';
 
         //Creating database if it doesn't exist.
         $db = new SQLite3($dbPath);
