@@ -6,7 +6,7 @@
 
     //Checking if the user is logged in
     if (!isset($_SESSION["userName"])) {
-        header("Location: 401.php");
+        header("Location: ../User/401.php");
         exit();
     }
 

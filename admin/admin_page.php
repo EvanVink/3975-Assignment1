@@ -4,7 +4,7 @@ include("../utils.php");
 session_start();
 
 if (!isset($_SESSION["userName"])) {
-    header("Location: login.php");
+    header("Location: ../User/401.php");
     exit();
 }
 
@@ -37,7 +37,6 @@ $row = $result->fetchArray(SQLITE3_ASSOC);
 
 $res = $db->query('SELECT * FROM Users');
 
-echo realpath('BlogDB.db');
 
 
 echo "<style>

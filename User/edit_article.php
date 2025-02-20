@@ -5,7 +5,7 @@
 
     //Checking if the user is logged in
     if (!isset($_SESSION["userName"])) {
-        header("Location: 401.php");
+        header("Location: ../User/401.php");
         exit();
     }
 
@@ -18,7 +18,7 @@
 
     //Getting article Id
     if (!isset($_GET["id"]) || empty($_GET["id"])) {
-        header("Location: profile.php");
+        header("Location: ../User/profile.php");
         exit();
     }
 

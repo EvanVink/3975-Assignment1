@@ -6,7 +6,7 @@
     session_start();
     
     if (!isset($_SESSION["userName"])) {
-        header("Location: ../login.php");
+        header("Location: ../User/401.php");
         exit();
     }
 
@@ -14,6 +14,9 @@
 
     $db = getDatabase();
 
+    if(!isset($_GET['id'])){
+        header("Location: ../User/profile.php");
+    }
 
     if(isset($_GET['id'])){
         $id = $_GET['id'];

@@ -1,22 +1,24 @@
 <?php
-    include('../templates/header.php');    
+     
     include('../utils.php');
 
     
     if (!isset($_SESSION["userName"])) {
-        header("Location: login.php");
+        header("Location: ../User/401.php");
         exit();
     }
 
+     
 
     $db = getDatabase();
 
     if(isset($_GET['id'])){
         $id = $_GET['id'];
     } else {
-        $id = null;
-        echo "no article chosen";
+        header("Location: ../User/profile.php");
     }
+
+    include('../templates/header.php');  
 
 
     $dbQuery = "SELECT Title, Body, StartDate, EndDate, FirstName, LastName FROM Article 

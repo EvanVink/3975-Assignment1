@@ -1,13 +1,14 @@
-<?php
-    include('../templates/header.php');    
+<?php  
     include('../utils.php');
 
     
     if (!isset($_SESSION["userName"])) {
-        header("Location: login.php");
+        header("Location: ../User/401.php");
         exit();
     }
 
+
+    include('../templates/header.php');  
 
 
     $db = getDatabase();
