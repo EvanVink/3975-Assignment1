@@ -14,7 +14,11 @@ if ($userRole != "admin") {
     exit();
 }
 
+
+include("../templates/header.php"); 
 ?>
+
+
 <body>
     <div class = "logo">
     <h1>Admin Page</h1>
@@ -88,7 +92,7 @@ echo "<style>
     }
 </style>";
 
-include("../templates/header.php"); 
+
 
 echo "<div class='table-container'>";
 echo "<table>";
