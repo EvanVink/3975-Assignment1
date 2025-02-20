@@ -19,7 +19,9 @@
     }
 
 
-    $dbQuery = "SELECT Title, Body, StartDate, EndDate, ContributorUsername FROM Article WHERE ArticleId = ?";
+    $dbQuery = "SELECT Title, Body, StartDate, EndDate, FirstName, LastName FROM Article 
+    INNER JOIN Users ON Article.ContributorUsername = Users.Username
+    WHERE ArticleId = ?";
 
 
     $preparedstmt = $db->prepare($dbQuery);
@@ -45,7 +47,7 @@
     
         <h1 class='index_h1'>{$data[0]}</h1>
 
-        <h5 class='date'><i>Posted on {$date} by {$data[4]}</i></h5>
+        <h5 class='date'><i>Posted on {$date} by {$data[4]} {$data[5]}</i></h5>
 
         <div class='mainBody'> {$data[1]}</div>
     

@@ -1,6 +1,7 @@
 <?php
-    include('../templates/header.php');
     include('../utils.php');
+
+    session_start();
 
     //Checking if the user is logged in
     if (!isset($_SESSION["userName"])) {
@@ -60,6 +61,8 @@
             }
         }
     }
+
+    include('../templates/header.php');
 
     // Start HTML output
     echo '<body>';

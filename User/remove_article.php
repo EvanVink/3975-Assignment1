@@ -1,12 +1,12 @@
 <?php
-    
 
-    include('../templates/header.php');    
+     
     include('../utils.php');
 
+    session_start();
     
     if (!isset($_SESSION["userName"])) {
-        header("Location: login.php");
+        header("Location: ../login.php");
         exit();
     }
 
@@ -31,12 +31,13 @@
 
     }
 
-
-    if($exec == true){
-        header("Location: profile.php");
-    }
-
     $db->close();
 
-    include('../templates/footer.php');
+
+    if($exec == true){
+        header("Location: ../User/profile.php");
+        die();
+    }
+
+    
 ?>

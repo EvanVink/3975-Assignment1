@@ -14,6 +14,9 @@
 
     $dbQuery = "SELECT Title, Body, StartDate, EndDate, ContributorUsername, ArticleId FROM Article WHERE ContributorUsername = ?";
 
+
+
+
     $perparedstmt = $db->prepare($dbQuery);
     $perparedstmt->bindParam(1, $_SESSION["userName"]);
 

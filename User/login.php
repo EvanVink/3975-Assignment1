@@ -1,7 +1,7 @@
 <?php
     $displayNav = false;    //Disabling the navigation bar.
 
-    include('../templates/header.php');
+    
     include('../utils.php');
 
     // Back-end code for the login form.
@@ -46,23 +46,24 @@
                         $_SESSION["role"]       = $result["Role"];
                         $_SESSION["name"]       = $result["FirstName"] . " " . $result["LastName"];
 
-                        echo $_SESSION["role"];
                         
                         //Redirecting to the admin page if the user is an admin.
                         if ($result["Role"] == "admin") {
                             //! I might want to change this path.
                             header("Location: ../admin/admin_page.php");
+                            die();
                             
                         } else {
                             //Redirecting to the main page.
                             header("Location: ../index.php");
+                            die();
                         }                        
-                        exit();
+                       
 
                     } else {
                         //Redirecting to the pending page.
-                        header("Location: pending.php");
-                        exit();
+                        header("Location: ../User/pending.php");
+                        die();
                     }
 
                 } else {
@@ -79,6 +80,8 @@
 
         }
     }
+
+    include('../templates/header.php');
 
     // Body of the page
     echo '<body>';

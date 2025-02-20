@@ -1,6 +1,7 @@
 <?php
-    include('../templates/header.php');
     include('../utils.php');
+
+    session_start();
 
     //Checking if the user is logged in
     if (!isset($_SESSION["userName"])) {
@@ -62,13 +63,16 @@
         echo '</div>';
     }
 
+    include('../templates/header.php');
+
     // Display the form only if the article exists and preloading article data!!
     if ($queriedData) {
         echo '
             <div class="createArticle-form-container">
-                <form method="POST" action="">
+                <form method="POST" action="/User/process_update_article.php">
                     <div class="email_date_container">
                         <div class="mb-31 flex-1">
+                            <input type="hidden" name="Id" value="' . $queriedData["ArticleId"] . '">
                             <label for="email" class="form-label">Email address</label>
                             <input type="email" class="form-control" id="email" 
                                 value="' . sanitize_input($_SESSION["userName"]) . '" readonly>
