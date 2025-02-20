@@ -11,7 +11,7 @@ if (!isset($_SESSION["userName"])) {
 
 $userRole = $_SESSION["role"];
 if ($userRole != "Admin") {
-    header("Location: ../User/login.php");
+    header("Location: ../User/401.php");
     exit();
 }
 

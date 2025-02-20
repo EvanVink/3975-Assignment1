@@ -1,10 +1,16 @@
 <?php
     include '../templates/header.php';
     include("../utils.php");
+
     if (!isset($_SESSION["userName"])) {
         header("Location: login.php");
         exit();
     }
+    $userRole = $_SESSION["role"];
+if ($userRole != "Admin") {
+    header("Location: ../User/401.php");
+    exit();
+}
 
 ?>
 <style>

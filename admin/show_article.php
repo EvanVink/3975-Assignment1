@@ -4,6 +4,11 @@ if (!isset($_SESSION["userName"])) {
     header("Location: login.php");
     exit();
 }
+$userRole = $_SESSION["role"];
+if ($userRole != "Admin") {
+    header("Location: ../User/401.php");
+    exit();
+}
 $db = new SQLite3('../DB/BlogDB.db');
 
 
