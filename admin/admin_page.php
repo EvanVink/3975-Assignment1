@@ -1,5 +1,4 @@
-<?php 
-include("../templates/header.php"); 
+<?php  
 include("../utils.php");
 
 session_start();
@@ -10,7 +9,7 @@ if (!isset($_SESSION["userName"])) {
 }
 
 $userRole = $_SESSION["role"];
-if ($userRole != "Admin") {
+if ($userRole != "admin") {
     header("Location: ../User/401.php");
     exit();
 }
@@ -88,6 +87,8 @@ echo "<style>
         background-color: #45a049;
     }
 </style>";
+
+include("../templates/header.php"); 
 
 echo "<div class='table-container'>";
 echo "<table>";
