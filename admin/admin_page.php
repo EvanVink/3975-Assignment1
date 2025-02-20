@@ -1,8 +1,17 @@
 <?php 
 include("../templates/header.php"); 
 include("../utils.php");
+
+
+
 if (!isset($_SESSION["userName"])) {
     header("Location: login.php");
+    exit();
+}
+
+$userRole = $_SESSION["role"];
+if ($userRole != "Admin") {
+    header("Location: ../User/login.php");
     exit();
 }
 
@@ -10,8 +19,6 @@ if (!isset($_SESSION["userName"])) {
 <body>
     <div class = "logo">
     <h1>Admin Page</h1>
-    <p>Welcome to the admin page. Here you can view, add, edit, and delete Users.</p>
-    <p>Click on the links below to perform the desired action.</p>
 <h1>List of Users</h1>
 </div>
 
