@@ -96,42 +96,59 @@ while ($row = $res->fetchArray()) {
     echo "<td>{$row['Role']}</td>";
     echo "<td class='action-buttons'>";
     
-    echo "<a href='#' onclick='promoteUser(\"{$row['Username']}\")'>Approve</a>";
-    
-    echo "<a href='#' onclick='demoteUser(\"{$row['Username']}\")' style='color: white; background-color: red; padding: 10px 20px; text-decoration: none; border-radius: 5px;'>Disapprove</a>";
+    echo "<a href='#' onclick='event.preventDefault(); changeUserStatus(\"{$row['Username']}\", 1)'>Approve</a>";
+    echo "<a href='#' onclick='event.preventDefault(); changeUserStatus(\"{$row['Username']}\", 0)' style='color: white; background-color: red; padding: 10px 20px; text-decoration: none; border-radius: 5px;'>Disapprove</a>";
 
     echo "</td>";  
     echo "</tr>";
 }
-
 echo "</table>";
 echo "</div>";
 
 
 echo "<br/><br/>";
 ?>
+ <script>
+        function changeUserStatus(username, status) {
+            fetch(window.location.href, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'Username=' + encodeURIComponent(username) + '&IsApproved=' + encodeURIComponent(status)
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log('Server Response:', data);
+                location.reload();
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
 
-<script>
-function promoteUser(username) {
-    fetch('promote_user.php?Username=' + encodeURIComponent(username), {
-        method: 'GET'
-    })
-    .then(() => {
-        location.reload();
-    })
-    .catch(error => console.error('Error:', error));
-}
-</script>
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Username']) && isset($_POST['IsApproved'])) {
+        $username = $_POST['Username'];
+        $isApproved = $_POST['IsApproved'];
 
-<script>
-function demoteUser(username) {
-    fetch('demote_user.php?Username=' + encodeURIComponent(username), {
-        method: 'GET'
-    })
-    .then(() => {
-        location.reload();
-    })
-    .catch(error => console.error('Error:', error));
-}
-</script>
+        $stm = $db->prepare('UPDATE Users SET IsApproved = ? WHERE Username = ?');
+        
+        if (!$stm) {
+            die("SQL Prepare Failed: " . $db->lastErrorMsg());
+        }
+
+        $stm->bindValue(1, $isApproved, SQLITE3_INTEGER);
+        $stm->bindValue(2, $username, SQLITE3_TEXT);
+
+        $result = $stm->execute();
+
+        if ($result) {
+            echo "User status updated successfully!";
+        } else {
+            echo "Database update failed!";
+        }
+
+        exit(); 
+    }
+    ?>
 <?php include("../templates/footer.php"); ?>
