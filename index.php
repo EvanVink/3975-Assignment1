@@ -1,5 +1,4 @@
-<?php
-    include('templates/header.php');    
+<?php  
     include('utils.php');
 
     
@@ -14,6 +13,8 @@
     INNER JOIN Users ON Article.ContributorUsername = Users.Username";
 
     $result = $db->query($dbQuery);
+
+    include('templates/header.php');  
 
     echo '<body class="back">';
 
