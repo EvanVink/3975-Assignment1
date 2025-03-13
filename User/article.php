@@ -1,29 +1,36 @@
 <?php
-    include('../templates/header.php');    
+     
+    // Include utility functions
     include('../utils.php');
 
+    session_start();
     
     if (!isset($_SESSION["userName"])) {
-        header("Location: login.php");
+        header("Location: ../User/401.php");
         exit();
     }
 
+     
 
     $db = getDatabase();
 
+    // Check if the 'id' parameter is provided in the URL (GET request)
     if(isset($_GET['id'])){
         $id = $_GET['id'];
     } else {
-        $id = null;
-        echo "no article chosen";
+        // If 'id' is not provided, redirect to the user's profile page
+        header("Location: ../User/profile.php");
     }
 
+    include('../templates/header.php');  
 
+
+    // SQL query to fetch the article details by ArticleId, including article title, body, dates, and author information
     $dbQuery = "SELECT Title, Body, StartDate, EndDate, FirstName, LastName FROM Article 
     INNER JOIN Users ON Article.ContributorUsername = Users.Username
     WHERE ArticleId = ?";
 
-
+    // Prepare the SQL statement to avoid SQL injection
     $preparedstmt = $db->prepare($dbQuery);
     $preparedstmt->bindValue(1, $id);
 
@@ -32,13 +39,13 @@
     $data = $result->fetchArray();
 
 
-
+    // Format the start date for display
     $date = date_create($data[2]);
     $date = date_format($date, ("F d, Y"));
     
 
     
-
+    // Output the article details inside the body section
     echo '<body class="back">';
 
 

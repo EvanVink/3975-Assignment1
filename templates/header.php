@@ -46,6 +46,7 @@
                 echo '<li><a href="../admin/admin_page.php">User List</a></li>';
                 echo '<li><a href="../index.php">Articles</a></li>';
                 echo '<li><a href="../User/createArticle.php">Create Article</a></li>';
+                echo '<li><a href="../User/profile.php">Profile</a></li>';
                 echo '<li><a href="../User/logout.php">Logout</a></li>';
             } else {
                 echo '<li><a href="../index.php">Articles</a></li>';

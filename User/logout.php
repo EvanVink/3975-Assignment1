@@ -1,9 +1,10 @@
 <?php
+    //starting and destroying session
     session_start();
     session_destroy();
 
-
-    header("Location: ../landing.php");
+    //redirecting to index page
+    header("Location: ../index.php");
     exit();
 
 ?>
